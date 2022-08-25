@@ -1,4 +1,7 @@
 var timeEl  = document.querySelector(".time");
+var PlayEl = document.querySelector(".btn")
+
+
 
 var secondsLeft = 45;
 
@@ -42,3 +45,12 @@ var questions = [
     }
 
 ];
+
+// function startGame{
+
+// }
+
+
+
+
+// PlayEl.addEventListener('click', startGame);

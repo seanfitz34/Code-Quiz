@@ -1,82 +1,65 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  /* element selectors */
-}
-header {
-  position: absolute;
-  top: 0;
-
-  justify-content: space-between;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-  background-color: green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-p {
-  color: white;
-  font-size: 1.5em;
-  float: right;
-}
-button {
-  outline: none;
-  background-color: grey;
-  color: whitesmoke;
-  font-size: 1.5em;
-}
-/* class selectors */
-.outer-container {
-  padding: 10px;
-}
-.top-bar {
-  float: right;
-}
-#questions {
-  font-size: 3rem;
-}
-.qcontainer {
-  width: 800;
-  max-width: 80%;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px 2px;
-}
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  margin: 20px 0;
-}
-.btn {
-  background-color: grey;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px 10px;
-}
-.btn:hover {
-  border-color: yellow;
-}
-.start-btn,
-.next-btn {
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 10px 20px;
+:root {
   background-color: black;
 }
-.controls {
-  display: flex;
-  justify-content: space-between;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
 }
-.hide {
+header {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 5.4rem;
+  color: white;
+  padding: 0 24rem;
+}
+h1 {
+  font-size: 5.4rem;
+  color: white;
+  margin-bottom: 5rem;
+}
+h2 {
+  font-size: 4.2rem;
+  margin-bottom: 4rem;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.text-center {
+  text-align: center;
+}
+.hidden {
   display: none;
+}
+.btn {
+  font-size: 2.4rem;
+  padding: 2rem 0;
+  width: 30rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: black;
+  background: blue;
+  border-radius: 4px;
+}
+#highscores-btn {
+  background: green;
 }

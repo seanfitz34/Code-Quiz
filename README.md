@@ -14,6 +14,6 @@ https://github.com/seanfitz34/Code-Quiz/pull/4
 
 ## Image
 
-![password generator](./assets/images/IMG_0945%20Small.jpeg)
+![password generator](./images/IMG_0960%20Small.jpegimages)
 
 © 2022 Sean Fitzgerald

@@ -7,19 +7,31 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <header class="time">Timer</header>
-
-
-
+  
+  
+  
   <body>
+    <header>
+      <p class="time">Timer:</p>
+    </header>
    <div class="container">
-    <div id="home" class="flex-column flex-center">
+
+    <div id="home" class="flex-column flex-center ">
         <h1>Coding Quiz!</h1>
-        <a href=""/gmae.html" class="btn">Play</a>
-        <a href=""/highscores.html" id="highscores-btn"
-        class="btn">High Scores</a>
+       <button id="start" class="btn">start game</button>
     </div>
 
+    <div id="questions" class="flex-column flex-center hidden">
+      <h3 id="questionText"></h3>
+      <div id="questionButtons"></div>
+    </div>
+
+    <div id="end" class="flex-column flex-center hidden">
+      <h3>game over</h3>
+      <p>your final score: <span id="finalScore">0</span></p>
+
+      <p>Enter Intitals: <input type="text" id="initials"><button id="submit">Submit</button></p>
+    </div>
 
    </div>
 

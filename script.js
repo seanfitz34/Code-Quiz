@@ -1,56 +1,77 @@
-var timeEl  = document.querySelector(".time");
-var PlayEl = document.querySelector(".btn")
-
-
+// delcare all teh global variables
+var timeEl = document.querySelector(".time");
+var home = document.querySelector("#home");
+var playEl = document.querySelector("#start");
+var questionContainer = document.querySelector("#questions");
+var questionsText = document.querySelector("#questionText");
+var questionButtons = document.querySelector("#questionsButtons");
+var end = document.querySelector("#end");
+var finalScore = document.querySelector("#finalScore");
+var initials = document.querySelector("#initials");
+var submit = document.querySelector("#submit");
 
 var secondsLeft = 45;
-
-function setTime(){
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft + "Timer";
-
-        if(secondsLeft === 0){
-            clearInterval(timerInterval);
-            
-        }
-
-    },1000);
-}
-setTime();
-
+var index = 0;
 
 // Questions and answers
 
 var questions = [
-    {
-        Question: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
-      },
-      {
-        Question: "The condition in an if / else statment is enclosed within _____.",
-        choices: ["parentheses", "quotes", "curly brackets", "square brackets"],
-        answer: "parentheses"
-    },
-    {
-        Question: "What does the following expression return? '!false'",
-        choices: ["null", "true", "undefined", "false"],
-        answer: "true"
-      },
-      {
-        Question: "Arrays in Javascript can be used to store ____.",
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        answer: "all of the above"
-    }
-
+  {
+    question: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts",
+  },
+  {
+    question:
+      "The condition in an if / else statment is enclosed within _____.",
+    choices: ["parentheses", "quotes", "curly brackets", "square brackets"],
+    answer: "parentheses",
+  },
+  {
+    question: "What does the following expression return? '!false'",
+    choices: ["null", "true", "undefined", "false"],
+    answer: "true",
+  },
+  {
+    question: "Arrays in Javascript can be used to store ____.",
+    choices: [
+      "numbers and strings",
+      "other arrays",
+      "booleans",
+      "all of the above",
+    ],
+    answer: "all of the above",
+  },
 ];
 
-// function startGame{
+function setTime() {
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    timeEl.textContent = "Timer: " + secondsLeft;
 
-// }
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+    }
+  }, 1000);
+}
+function startGame() {
+  timeEl.textContent = "Timer: " + secondsLeft;
+  setTime();
+  //this will need to hide the first container and show the question container and then run the function that will display the questions
+  home.classList.add("hidden");
+  questionContainer.classList.remove("hidden");
+  displayQs();
+}
 
+function displayQs() {
+  // need to display the question text from the question array.need tosingle out an object from the question array first.
+  var questionObj = questions[index];
+  questionsText.textContent = questionObj.question;
 
+  //  need to loop over the choices array
+  for (var i = 0; i < questionObj.choices.length; i++) {
+    // create buttons give the their content and append them to the page
+  }
+}
 
-
-// PlayEl.addEventListener('click', startGame);
+playEl.addEventListener("click", startGame);

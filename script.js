@@ -4,7 +4,7 @@ var home = document.querySelector("#home");
 var playEl = document.querySelector("#start");
 var questionContainer = document.querySelector("#questions");
 var questionsText = document.querySelector("#questionText");
-var questionButtons = document.querySelector("#questionsButtons");
+var questionButtons = document.querySelector("#questionButtons");
 var end = document.querySelector("#end");
 var finalScore = document.querySelector("#finalScore");
 var initials = document.querySelector("#initials");
@@ -68,10 +68,38 @@ function displayQs() {
   var questionObj = questions[index];
   questionsText.textContent = questionObj.question;
 
+  questionButtons.innerHTML = "";
   //  need to loop over the choices array
   for (var i = 0; i < questionObj.choices.length; i++) {
     // create buttons give the their content and append them to the page
+    var btn = document.createElement("button");
+    btn.textContent = questionObj.choices[i];
+    btn.setAttribute("class", "btn");
+    btn.setAttribute("value", questionObj.choices[i]);
+
+    btn.addEventListener("click", checkAnswers);
+    questionButtons.append(btn);
   }
+}
+
+function checkAnswers(event) {
+  if (questions[index].answer !== event.target.value) {
+    secondsLeft = secondsLeft - 5;
+    timeEl.textContent = "Timer: " + secondsLeft;
+  }
+
+  index++;
+
+  if (questions.length === index) {
+    gameOver()
+  } else {
+    displayQs();
+  }
+}
+
+function gameOver(){
+  end.classList.remove("hidden");
+  questionContainer.classList.add("hidden");
 }
 
 playEl.addEventListener("click", startGame);
